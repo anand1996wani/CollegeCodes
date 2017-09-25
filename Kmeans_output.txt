@@ -1,0 +1,193 @@
+Example 1:
+
+
+Enter number of elements
+7
+Enter number of attributes
+2
+Enter the elements
+1 1
+1.5 2
+3 4
+5 7
+3.5 5
+4.5 5
+3.5 4.5
+Enter number of clusters
+2
+Cluster center 1 is : 1.0 1.0 
+Cluster center 2 is : 1.5 2.0 
+
+Element No 1 belongs to cluster NO 1
+Element No 2 belongs to cluster NO 2
+Element No 3 belongs to cluster NO 2
+Element No 4 belongs to cluster NO 2
+Element No 5 belongs to cluster NO 2
+Element No 6 belongs to cluster NO 2
+Element No 7 belongs to cluster NO 2
+
+------------------------------------------------------------------
+Cluster center 1 is : 1.0 1.0 
+Cluster center 2 is : 3.5 4.583333333333333 
+
+Element No 1 belongs to cluster NO 1
+Element No 2 belongs to cluster NO 1
+Element No 3 belongs to cluster NO 2
+Element No 4 belongs to cluster NO 2
+Element No 5 belongs to cluster NO 2
+Element No 6 belongs to cluster NO 2
+Element No 7 belongs to cluster NO 2
+
+------------------------------------------------------------------
+Cluster center 1 is : 1.25 1.5 
+Cluster center 2 is : 3.9 5.1 
+
+Element No 1 belongs to cluster NO 1
+Element No 2 belongs to cluster NO 1
+Element No 3 belongs to cluster NO 2
+Element No 4 belongs to cluster NO 2
+Element No 5 belongs to cluster NO 2
+Element No 6 belongs to cluster NO 2
+Element No 7 belongs to cluster NO 2
+
+
+
+Example 2:
+
+
+Enter number of elements
+9
+Enter number of attributes
+1
+Enter the elements
+2
+3
+4
+10
+11
+12
+20
+25
+30
+Enter number of clusters
+2
+Cluster center 1 is : 2.0 
+Cluster center 2 is : 3.0 
+
+Element No 1 belongs to cluster NO 1
+Element No 2 belongs to cluster NO 2
+Element No 3 belongs to cluster NO 2
+Element No 4 belongs to cluster NO 2
+Element No 5 belongs to cluster NO 2
+Element No 6 belongs to cluster NO 2
+Element No 7 belongs to cluster NO 2
+Element No 8 belongs to cluster NO 2
+Element No 9 belongs to cluster NO 2
+
+------------------------------------------------------------------
+Cluster center 1 is : 2.0 
+Cluster center 2 is : 14.375 
+
+Element No 1 belongs to cluster NO 1
+Element No 2 belongs to cluster NO 1
+Element No 3 belongs to cluster NO 1
+Element No 4 belongs to cluster NO 2
+Element No 5 belongs to cluster NO 2
+Element No 6 belongs to cluster NO 2
+Element No 7 belongs to cluster NO 2
+Element No 8 belongs to cluster NO 2
+Element No 9 belongs to cluster NO 2
+
+------------------------------------------------------------------
+Cluster center 1 is : 3.0 
+Cluster center 2 is : 18.0 
+
+Element No 1 belongs to cluster NO 1
+Element No 2 belongs to cluster NO 1
+Element No 3 belongs to cluster NO 1
+Element No 4 belongs to cluster NO 1
+Element No 5 belongs to cluster NO 2
+Element No 6 belongs to cluster NO 2
+Element No 7 belongs to cluster NO 2
+Element No 8 belongs to cluster NO 2
+Element No 9 belongs to cluster NO 2
+
+------------------------------------------------------------------
+Cluster center 1 is : 4.75 
+Cluster center 2 is : 19.6 
+
+Element No 1 belongs to cluster NO 1
+Element No 2 belongs to cluster NO 1
+Element No 3 belongs to cluster NO 1
+Element No 4 belongs to cluster NO 1
+Element No 5 belongs to cluster NO 1
+Element No 6 belongs to cluster NO 1
+Element No 7 belongs to cluster NO 2
+Element No 8 belongs to cluster NO 2
+Element No 9 belongs to cluster NO 2
+
+------------------------------------------------------------------
+Cluster center 1 is : 7.0 
+Cluster center 2 is : 25.0 
+
+Element No 1 belongs to cluster NO 1
+Element No 2 belongs to cluster NO 1
+Element No 3 belongs to cluster NO 1
+Element No 4 belongs to cluster NO 1
+Element No 5 belongs to cluster NO 1
+Element No 6 belongs to cluster NO 1
+Element No 7 belongs to cluster NO 2
+Element No 8 belongs to cluster NO 2
+Element No 9 belongs to cluster NO 2
+
+
+
+Example 3:
+
+
+Enter number of elements
+5
+Enter number of attributes
+2
+Enter the elements
+12 51
+6 8
+31 43
+9 22
+76 21
+Enter number of clusters
+3
+Cluster center 1 is : 12.0 51.0 
+Cluster center 2 is : 6.0 8.0 
+Cluster center 3 is : 31.0 43.0 
+
+Element No 1 belongs to cluster NO 1
+Element No 2 belongs to cluster NO 2
+Element No 3 belongs to cluster NO 3
+Element No 4 belongs to cluster NO 2
+Element No 5 belongs to cluster NO 3
+
+------------------------------------------------------------------
+Cluster center 1 is : 12.0 51.0 
+Cluster center 2 is : 7.5 15.0 
+Cluster center 3 is : 53.5 32.0 
+
+Element No 1 belongs to cluster NO 1
+Element No 2 belongs to cluster NO 2
+Element No 3 belongs to cluster NO 1
+Element No 4 belongs to cluster NO 2
+Element No 5 belongs to cluster NO 3
+
+------------------------------------------------------------------
+Cluster center 1 is : 21.5 47.0 
+Cluster center 2 is : 7.5 15.0 
+Cluster center 3 is : 76.0 21.0 
+
+Element No 1 belongs to cluster NO 1
+Element No 2 belongs to cluster NO 2
+Element No 3 belongs to cluster NO 1
+Element No 4 belongs to cluster NO 2
+Element No 5 belongs to cluster NO 3
+
+
+
