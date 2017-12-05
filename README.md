@@ -1,2 +1,2 @@
-# BE_SEM_1
+# CollegeCodes
 College Assignments
