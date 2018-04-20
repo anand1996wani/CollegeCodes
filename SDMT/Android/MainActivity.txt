@@ -1,0 +1,208 @@
+package com.example.dell.myapplication;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.udojava.evalex.Expression;
+import java.math.BigDecimal;
+
+public class MainActivity extends AppCompatActivity {
+
+    public Expression expression;
+    public EditText editText;
+    public Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,equal,sum,sub,mul,open,close,clr,sin,cos,tan,save,recall;
+    public BigDecimal result  = null;
+    public String savevar;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        editText = (EditText)findViewById(R.id.editTest);
+        b1 = (Button)findViewById(R.id.button1);
+        b2 = (Button)findViewById(R.id.button2);
+        b3 = (Button)findViewById(R.id.button3);
+        b4 = (Button)findViewById(R.id.button4);
+        b5 = (Button)findViewById(R.id.button5);
+        b6 = (Button)findViewById(R.id.button6);
+        b7 = (Button)findViewById(R.id.button7);
+        b8 = (Button)findViewById(R.id.button8);
+        b9 = (Button)findViewById(R.id.button9);
+        b0 = (Button)findViewById(R.id.button0);
+        sum = (Button)findViewById(R.id.sum);
+        sub = (Button)findViewById(R.id.sub);
+        mul = (Button)findViewById(R.id.mul);
+        open = (Button)findViewById(R.id.open);
+        close = (Button)findViewById(R.id.close);
+        sin = (Button)findViewById(R.id.sin);
+        cos = (Button)findViewById(R.id.cos);
+        tan = (Button)findViewById(R.id.tan);
+        clr = (Button)findViewById(R.id.clear);
+        equal = (Button)findViewById(R.id.equal);
+
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("1");
+            }
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("2");
+            }
+        });
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("3");
+            }
+        });
+
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("4");
+            }
+        });
+
+        b5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("5");
+            }
+        });
+
+        b6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("6");
+            }
+        });
+
+        b7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("7");
+            }
+        });
+
+        b8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("8");
+            }
+        });
+
+        b9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("9");
+            }
+        });
+
+        b0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("0");
+            }
+        });
+
+        sum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("+");
+            }
+        });
+
+        sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("-");
+            }
+        });
+
+        mul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("*");
+            }
+        });
+
+        sin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("SIN");
+            }
+        });
+
+        cos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("COS");
+            }
+        });
+
+        tan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("TAN");
+            }
+        });
+
+        open.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append("(");
+            }
+        });
+
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.append(")");
+            }
+        });
+
+        equal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expression = new Expression(editText.getText().toString());
+                expression.setPrecision(2);
+                result = expression.eval();
+                editText.setText("");
+                editText.setText(result.toString());
+            }
+        });
+
+        clr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText("");
+            }
+        });
+
+        save = (Button)findViewById(R.id.save);
+        recall = (Button)findViewById(R.id.recall);
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                savevar = editText.getText().toString();
+                editText.setText("");
+            }
+        });
+
+        recall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editText.setText(savevar);
+            }
+        });
+    }
+}
