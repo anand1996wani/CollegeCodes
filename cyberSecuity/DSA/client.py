@@ -7,6 +7,7 @@ clientSocket.connect(("127.0.0.1",5000))
 
 receivedMessage = clientSocket.recv(4096)
 
+
 messageArr = receivedMessage.split("\t")
 message1 = messageArr[0]
 p1 = int(messageArr[1])
