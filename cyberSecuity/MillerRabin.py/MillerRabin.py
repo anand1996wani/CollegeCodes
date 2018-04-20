@@ -1,4 +1,4 @@
-#It is a primality test, But accutually it tests wheather the number is composite. ie if the test says that number is composite then it is composite and if test says that the number is prime then it is probably composite.
+#It is a primality test, But accutually it tests wheather the number is composite. ie if the test says that number is composite then it is composite and if test says that the number is prime then it is probably prime.
 import random
 n = int(input("Enter the number"))
 #step 1 n-1 = 2^k * q

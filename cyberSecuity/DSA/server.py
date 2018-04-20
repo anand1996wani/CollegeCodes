@@ -1,114 +1,82 @@
 import socket
-import random
 import hashlib
-import math
+import random
+from Crypto.Util import number
 
-def isPrime(n):
-	if(n==2):
-		return True
-	for i in range(2,int(math.sqrt(n))+2):
-		if(n%i==0):
-			return False
-	return True
-
-q = 0
-while(True):
-	q = random.randint(2,10)
-	if(isPrime(q)):
-		break
-
-
-print("Value of q is : ",q)
+serverSocket = socket.socket()
+serverSocket.bind(("127.0.0.1",5000))
+serverSocket.listen(5)
+clientSocket,clientAddress = serverSocket.accept()
+print("Connected to client ",clientAddress)
+message = str(raw_input("Enter the message"))
+hashObject = hashlib.sha1(message)
+hexDig = hashObject.hexdigest()
+hashInt = int(hexDig, 16)
 
 p = 0
-while((p-1)%q!=0):
-	while(True):
-		p = random.randint(2,31)
-		if(isPrime(p)):
-			break
-		
-print("Value of p is : ",p)
+q = 0
+g = 0
+h = 0
+x = 0
+y = 0
+k = 0
+r = 0
+s = 0
+#Key Generation
+q = number.getPrime(8)	#8 is the bit length of Q
 
-h = random.randint(1,p-1)
-
-g = pow(h,((p-1)/q),p)
-
-print("Value is g is : ",g)
-
-#Private Key
-x = random.randint(1,q)
-
-print("Value of x is ",x)
-
-print("Private Key is :")
-
-print("p : ",p)
-print("q : ",q)
-print("g : ",g)
-print("x : ",x)
-
-
-y = pow(g,x,p)
-
-print("Value of y is ",y)
-
-print("p : ",p)
-print("q : ",q)
-print("g : ",g)
-print("y : ",y)
-
-
+while(True):
+	p = number.getPrime(64) #64 is the bit length of P	
+	if((p-1)%q==0):
+		break
 	
+while(True):
+	h = random.randint(2,p-2)	# 1 < h < p-1
+	g = pow(h,(p-1)/q,p)
+	if(g!=1):
+		break
 
-#signature Components
-k = random.randint(1,q)
-r = pow(g,k,p)%q
-while(r==0):
-	k = random.randint(1,q)
-	r = pow(g,k,p)%q	
-s = int((172/k + x*r)%q)
+#User Private key
+x = random.randint(1,q-1)	#  0 < x < q
 
-print("Signature Components")
-print("r is : ",r)
-print("s is : ",s)
+print("User Private key is : ")
+print("P : ",p)
+print("Q : ",q)
+print("G : ",g)
+print("X : ",x)
 
-#client side
-w = random.randint(1,100)
-while((s*w)%q!=1):
-	w = random.randint(1,100)
+#User Public Key
+y = pow(g,x,p)			# y = g ^ x % p
 
-u1 = 172*w%q
-u2 = r*w%q
-v = ((g**u1*y**u2)%p)%q
-
-print("Verifing Components")
-print("v is : ",v)
-
-
-if(v==r):
-	print("Signature verified")
-else:
-	print("Signature Incorrect")
-	
+print("User Public key is : ")
+print("P : ",p)
+print("Q : ",q)
+print("G : ",g)
+print("Y : ",y)
 
 
+#signing logic
+while(True):
+	k = random.randint(2,q-1)	# 1 < k < q
+	r = pow(g,k,p)%q
+	if(r!=0):
+		break
+
+kInverse = 0	
+while(k*kInverse % q != 1):
+	kInverse = random.randint(1, q)
+
+s = kInverse * (hashInt + x*r) % q
+
+#Signature is (r,s)
+
+print("Digital Signature is : ")
+print("R : ",r)
+print("S : ",s)
+
+clientSocket.send(message+"\t"+str(p)+"\t"+str(q)+"\t"+str(g)+"\t"+str(y)+"\t"+str(r)
++"\t"+str(s))
 
 
 
 
-
-'''
-server = socket.socket()
-port = int(input("Enter the port number"))
-server.bind(("localhost",port))
-server.listen(5)
-client,address = server.accept()
-temp = "Anand Dinesh Wani"
-#client.send(temp.encode('ascii'))
-client.send(temp)
-
-
-
-client.close()
-server.close()
-'''
